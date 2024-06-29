@@ -10,6 +10,13 @@ const TaskItem = ({ task, isCompletedList }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editedText, setEditedText] = useState(task.text);
 
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            dispatch(editTask(task.id, editedText));
+            setIsEditing(false);
+        }
+    };
+
     const handleToggle = () => {
         dispatch(toggleTask(task.id));
     };
@@ -43,6 +50,7 @@ const TaskItem = ({ task, isCompletedList }) => {
                     onChange={(e) => setEditedText(e.target.value)}
                     onBlur={handleSave}
                     autoFocus
+                    onKeyPress={handleKeyPress}
                 />
             ) : (
                 <ListItemText primary={task.text} />

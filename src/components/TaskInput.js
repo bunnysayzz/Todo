@@ -11,6 +11,14 @@ const TaskInput = () => {
         if (task.trim()) {
             dispatch(addTask(task));
             setTask('');
+        } else {
+            alert('Task cannot be empty');
+        }
+    };
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleAddTask();
         }
     };
 
@@ -21,6 +29,7 @@ const TaskInput = () => {
                 variant="outlined" 
                 value={task} 
                 onChange={(e) => setTask(e.target.value)} 
+                onKeyPress={handleKeyPress}
                 sx={{ marginBottom: 2 }}
             />
             <Button variant="contained" color="primary" onClick={handleAddTask}>
@@ -31,4 +40,3 @@ const TaskInput = () => {
 };
 
 export default TaskInput;
-

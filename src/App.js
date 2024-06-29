@@ -6,6 +6,7 @@ import TaskList from './components/TaskList';
 import CompletedTaskList from './components/CompletedTaskList';
 import { Container, Box, Typography } from '@mui/material';
 import { loadTasks } from './redux/actions';
+import { FaTasks, FaPlusCircle } from 'react-icons/fa';
 import './App.css';
 
 const AppContent = () => {
@@ -16,11 +17,18 @@ const AppContent = () => {
     }, [dispatch]);
 
     return (
-        <Container>
+        <Container className="app-container">
             <Box textAlign="center" my={4}>
-                <Typography variant="h3">To-Do List</Typography>
+                <Typography variant="h3" className="app-title">
+                    <FaTasks style={{ marginRight: '8px' }} />
+                    To-Do List
+                </Typography>
             </Box>
             <Box className="task-section">
+                <Typography variant="h5" className="task-input-title">
+                    <FaPlusCircle style={{ marginRight: '8px' }} />
+                    Add New Task
+                </Typography>
                 <TaskInput />
             </Box>
             <Box className="task-lists">

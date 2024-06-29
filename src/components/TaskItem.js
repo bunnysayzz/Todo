@@ -16,7 +16,9 @@ const TaskItem = ({ task, isCompletedList }) => {
 
     const handleDelete = (e) => {
         e.stopPropagation();
-        dispatch(deleteTask(task.id));
+        if (window.confirm('Are you sure you want to delete this task?')) {
+            dispatch(deleteTask(task.id));
+        }
     };
 
     const handleEdit = () => {

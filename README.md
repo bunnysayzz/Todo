@@ -32,14 +32,29 @@ This is a simple To-Do List application built with React and Redux. It allows us
 ### Installation
 
 1. Clone the repository:
-
+    ```bash
+    git clone https://github.com/bunnysayzz/todo.git
+    ```
 2. Install dependencies:
+    ```bash
+    cd todo
+    npm install
+    ```
 
 ### Running the Application
 
 1. Start the development server:
-
+    ```bash
+    npm start
+    ```
 2. Open your browser and navigate to `http://localhost:3000`.
+
+### Building the Application
+
+1. Create a production build:
+    ```bash
+    npm run build
+    ```
 
 ## Project Structure
 
@@ -48,8 +63,3 @@ This is a simple To-Do List application built with React and Redux. It allows us
   - `redux/`: Contains Redux setup including actions, reducer, and store.
   - `App.js`: Main application component.
   - `App.css`: Application styles.
-
-
-
-
-
